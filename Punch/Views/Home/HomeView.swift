@@ -6,16 +6,13 @@
 //
 
 import SwiftUI
-import SwiftData
 import SwiftDate
 
 struct HomeView: View {
-    private var totalTime = 10
-    
-    @State private var isPause = true
+    @StateObject var homeModel = HomeModel()
     
     private var totalTimeStr: String {
-        totalTime.seconds.timeInterval.toString {
+        homeModel.totalTime.seconds.timeInterval.toString {
             $0.unitsStyle = .none
             $0.allowedUnits = [.hour, .minute, .second]
             $0.zeroFormattingBehavior = .pad
@@ -24,7 +21,11 @@ struct HomeView: View {
 
     private func handlePunch() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        isPause.toggle()
+        if (homeModel.isPause) {
+            homeModel.start()
+        } else {
+            homeModel.stop()
+        }
     }
     
     var body: some View {
@@ -41,7 +42,7 @@ struct HomeView: View {
                             .foregroundStyle(Color(UIColor.label))
                     }
                     Spacer()
-                    PunchButton(isPause: isPause, onPress: handlePunch)
+                    PunchButton(isPause: homeModel.isPause, onPress: handlePunch)
                         .padding(.bottom, 12)
                 }
                 .padding(.top, geo.size.height / 16)
