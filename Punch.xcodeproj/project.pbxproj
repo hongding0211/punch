@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F1814F9E2B86FE100093FF65 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1814F9D2B86FE100093FF65 /* SettingsView.swift */; };
 		F1814FA32B8735BE0093FF65 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1814FA22B8735BE0093FF65 /* HomeModel.swift */; };
+		F1814FA72B875ED10093FF65 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1814FA62B875ED10093FF65 /* BaseModel.swift */; };
 		F1BC6EAB2B861D7E009B5025 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC6EAA2B861D7E009B5025 /* HomeView.swift */; };
 		F1BC6EAE2B861FC2009B5025 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC6EAD2B861FC2009B5025 /* Utils.swift */; };
 		F1BC6EB12B86216A009B5025 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = F1BC6EB02B86216A009B5025 /* SwiftDate */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		F1814F9D2B86FE100093FF65 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F1814FA22B8735BE0093FF65 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		F1814FA62B875ED10093FF65 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		F1BC6EAA2B861D7E009B5025 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1BC6EAD2B861FC2009B5025 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F1BC6EB52B862D94009B5025 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				F1814FA22B8735BE0093FF65 /* HomeModel.swift */,
+				F1814FA62B875ED10093FF65 /* BaseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				F1D634DE2B85AB1C00313423 /* ContentView.swift in Sources */,
 				F1814FA32B8735BE0093FF65 /* HomeModel.swift in Sources */,
 				F1BC6EBF2B8664A0009B5025 /* PunchButton.swift in Sources */,
+				F1814FA72B875ED10093FF65 /* BaseModel.swift in Sources */,
 				F1814F9E2B86FE100093FF65 /* SettingsView.swift in Sources */,
 				F1BC6EAB2B861D7E009B5025 /* HomeView.swift in Sources */,
 				F1BC6EB62B862D94009B5025 /* Style.swift in Sources */,

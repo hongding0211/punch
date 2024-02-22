@@ -11,7 +11,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                
+             
             }
                 .navigationTitle("Settings")
         }

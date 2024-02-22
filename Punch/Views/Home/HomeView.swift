@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftDate
 
 struct HomeView: View {
-    @StateObject var homeModel = HomeModel()
+    @State var homeModel = HomeModel()
     
     private var totalTimeStr: String {
         homeModel.totalTime.seconds.timeInterval.toString {
