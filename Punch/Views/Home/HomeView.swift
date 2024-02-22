@@ -9,10 +9,10 @@ import SwiftUI
 import SwiftDate
 
 struct HomeView: View {
-    @State var homeModel = HomeModel()
+    @Environment(HomeModel.self) private var homeModel
     
     private var totalTimeStr: String {
-        homeModel.totalTime.seconds.timeInterval.toString {
+        homeModel.data.totalTime.seconds.timeInterval.toString {
             $0.unitsStyle = .none
             $0.allowedUnits = [.hour, .minute, .second]
             $0.zeroFormattingBehavior = .pad
@@ -21,7 +21,7 @@ struct HomeView: View {
 
     private func handlePunch() {
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-        if (homeModel.isPause) {
+        if (homeModel.data.isPause) {
             homeModel.start()
         } else {
             homeModel.stop()
@@ -42,7 +42,7 @@ struct HomeView: View {
                             .foregroundStyle(Color(UIColor.label))
                     }
                     Spacer()
-                    PunchButton(isPause: homeModel.isPause, onPress: handlePunch)
+                    PunchButton(isPause: homeModel.data.isPause, onPress: handlePunch)
                         .padding(.bottom, 12)
                 }
                 .padding(.top, geo.size.height / 16)
@@ -50,6 +50,7 @@ struct HomeView: View {
                 .navigationTitle("Punch")
                 .navigationBarTitleDisplayMode(.large)
             }
+            
         }
         
     }
@@ -57,4 +58,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environment(HomeModel())
 }

@@ -9,6 +9,10 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    
+    var onInactive: (() -> Void)?
+    
     var body: some View {
         TabView {
             HomeView()
@@ -18,9 +22,15 @@ struct ContentView: View {
             SettingsView()
                 .tabItem { Label("Settings", systemImage: "gearshape.fill") }
         }
+        .onChange(of: scenePhase, initial: false) { _, phase in
+            if phase == .inactive {
+                onInactive?()
+            }
+        }
     }
 }
 
 #Preview {
     ContentView()
+        .environment(HomeModel())
 }
