@@ -6,17 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     var body: some View {
         TabView {
             HomeView()
                 .tabItem { Label("Punch", systemImage: "clock.fill") }
-            
-            Text("Statistics")
+            StatisticsView()
                 .tabItem { Label("Statistics", systemImage: "chart.bar.fill") }
-            
-            Text("Settings")
+            SettingsView()
                 .tabItem { Label("Settings", systemImage: "gearshape.fill") }
         }
     }

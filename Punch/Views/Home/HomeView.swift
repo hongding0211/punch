@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 import SwiftDate
 
 struct HomeView: View {
@@ -20,8 +21,9 @@ struct HomeView: View {
             $0.zeroFormattingBehavior = .pad
         }
     }
-    
+
     private func handlePunch() {
+        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
         isPause.toggle()
     }
     
